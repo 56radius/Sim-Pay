@@ -5,11 +5,15 @@ import {
  }
 from "react-native";
 
+import { StatusBar } from "expo-status-bar";
+
 export default function HomeScreen() {
   return (
+    <>
     <View  style={styles.container}>
-      <Text style={styles.textStyle}> Hello expo app </Text>
+      <Text style={styles.textStyle}> THis is the home page </Text>
     </View> 
+  </>
   );
 }
 
