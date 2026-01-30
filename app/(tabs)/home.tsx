@@ -9,6 +9,10 @@ import { Link } from "expo-router";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
+
+//importing components
+import TransactionHeader from "@/components/dashboardComponents/TransactionHeader";
+
 export default function HomeScreen() {
   return (
     <>
@@ -75,9 +79,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Transaction  */}
-        <View style={styles.transactionHeaders}>
-          <Text style={styles.transactionText}> Recent Transactions </Text>
-        </View>
+        <TransactionHeader />
         
 
       </View>
@@ -170,5 +172,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     color: "#111",
-  }
+  },
+
+  
 });
