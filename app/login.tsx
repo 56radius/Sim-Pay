@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   TextInput,
+  Pressable,
  }
 from "react-native";
 
@@ -16,6 +17,7 @@ export default function LoginScreen() {
   return (
     <KeyboardAvoidingView 
       style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <Text style={styles.title}> PayFlow</Text>
         <Text style={styles.subTitle}> Welcome Back </Text>
@@ -29,12 +31,11 @@ export default function LoginScreen() {
           secureTextEntry
         />
 
-        <Link 
-          href={"/home"}
-          style={styles.button}
-        >
-          <Text> Login </Text>
-        </Link>
+       <Link href={"/(tabs)/home"}>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}> Login </Text>
+          </Pressable>
+       </Link>
     </KeyboardAvoidingView> 
   );
 }
@@ -56,17 +57,32 @@ const styles = StyleSheet.create({
 
   subTitle: {
     color: "#fff",
-    marginBottom: 150,
+    marginBottom: 60,
   },
 
   input: {
-    marginBottom: 30,
-    backgroundColor: "white",
-    width: "100%",
+    width: "80%",
+    color: "#fff",
+    backgroundColor: "gray",
     padding: 14,
+    borderRadius: 15,
+    marginBottom: 15,
+    paddingVertical: 15,
   },
 
   button: {
+    width: "60%",
+    padding: 10,
+    backgroundColor: "gray",
+    alignItems: "center",
+    borderRadius: 9,
+    paddingVertical: 12,
+    justifyContent: "center",
+  },
+
+  buttonText: {
+    fontSize: 15,
+    fontWeight: 300,
     color: "#fff",
   },
 })
