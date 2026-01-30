@@ -11,6 +11,8 @@ import { StatusBar } from "expo-status-bar";
 
 import { Link } from "expo-router";
 
+import { Ionicons } from "@expo/vector-icons";
+
 export default function HomeScreen() {
   return (
     <>
@@ -18,19 +20,24 @@ export default function HomeScreen() {
       <View style={styles.card}> 
         {/* Section for text */}
         <View>
-           <Text style={styles.title}> Wallet Balance </Text>
+          <View style={styles.cardHeader}> 
+               <Text style={styles.title}> Wallet Balance </Text>
+
+               <Pressable>
+                   <Ionicons name="eye-outline" size={20} color="#fff" />
+               </Pressable>
+          </View>
            <Text style={styles.subTitle}> $2,4000.50 </Text>
            <Text style={styles.dateTitle}> Last Updated: 19:25</Text>
         </View>
 
-        {/* Add Money Buttonr */}
+        {/* Add Money Button */}
         <Link href="/profile">
           <Pressable style={styles.button}>
               <Text style={styles.buttonText}> + Add Money </Text>
           </Pressable>
         </Link>
       </View>
-      <Text style={styles.textStyle}> THis is the home page </Text>
     </View> 
   </>
   );
@@ -39,7 +46,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
   },
@@ -59,7 +65,8 @@ const styles = StyleSheet.create({
 
   title: {
     color: "#fff",
-    marginBottom: 30,
+    marginBottom: 25,
+    fontSize: 20,
   },
 
   subTitle:{
@@ -70,6 +77,11 @@ const styles = StyleSheet.create({
   dateTitle: {
     color: "#fff",
     marginBottom: 10,
+  },
+
+  cardHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 
   button: {
