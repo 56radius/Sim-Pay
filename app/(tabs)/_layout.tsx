@@ -11,6 +11,7 @@ export default function TabsLayout() {
                 name="home" 
                 options={{
                     tabBarIcon: () => <Ionicons name="home-outline" size={24} color="black" />,
+                    headerShown: false,
                 }}
             />
 

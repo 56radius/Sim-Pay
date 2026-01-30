@@ -1,98 +1,174 @@
-import { 
-  Text, 
+import {
+  Text,
   View,
   StyleSheet,
   Pressable,
-  KeyboardAvoidingView,
- }
-from "react-native";
-
-import { StatusBar } from "expo-status-bar";
+} from "react-native";
 
 import { Link } from "expo-router";
-
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   return (
     <>
-    <View style={styles.container}>
-      <View style={styles.card}> 
-        {/* Section for text */}
-        <View>
-          <View style={styles.cardHeader}> 
-               <Text style={styles.title}> Wallet Balance </Text>
+      <StatusBar style="dark" />
 
-               <Pressable>
-                   <Ionicons name="eye-outline" size={20} color="#fff" />
-               </Pressable>
+      <View style={styles.container}>
+
+        {/* ===== HEADER ===== */}
+        <View style={styles.header}>
+          <Text style={styles.headerText}>PayFlow</Text>
+
+          <View style={styles.headerIcons}>
+            <Ionicons name="shield-checkmark-outline" size={22}color="#111" /> 
+            <Ionicons name="notifications-outline" size={22} color="#111" /> 
           </View>
-           <Text style={styles.subTitle}> $2,4000.50 </Text>
-           <Text style={styles.dateTitle}> Last Updated: 19:25</Text>
         </View>
 
-        {/* Add Money Button */}
-        <Link href="/profile">
-          <Pressable style={styles.button}>
-              <Text style={styles.buttonText}> + Add Money </Text>
-          </Pressable>
-        </Link>
+        {/* ===== WALLET CARD ===== */}
+        <View style={styles.card}>
+
+          {/* Card Header */}
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>Wallet Balance</Text>
+
+            <Pressable>
+              <Ionicons
+                name="eye-outline"
+                size={20}
+                color="#fff"
+              />
+            </Pressable>
+          </View>
+
+          {/* Balance */}
+          <Text style={styles.balance}>₦2,400.50</Text>
+
+          {/* Date */}
+          <Text style={styles.date}>
+            Last updated • 19:25
+          </Text>
+
+          {/* Add Money */}
+          <Link href="/profile" asChild>
+            <Pressable style={styles.button}>
+              <AntDesign name="plus-circle" size={24} color="black" />
+              <Text style={styles.buttonText}>
+                Add Money
+              </Text>
+            </Pressable>
+          </Link>
+
+        </View>
+
+
+        {/* Servives */}
+        <View style={styles.services}>
+          <Text style={styles.servicesText}> Services </Text>
+        </View>
+
+
+        {/* Offers and Rewards */}
+        <View style={styles.services}>
+          <Text style={styles.servicesText}> Offers and Rewards </Text>
+        </View>
+
+        {/* Transaction  */}
+        <View style={styles.transactionHeaders}>
+          <Text style={styles.transactionText}> Recent Transactions </Text>
+        </View>
+        
+
       </View>
-    </View> 
-  </>
+    </>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "#fff",
+    paddingTop: 60,
+    paddingHorizontal: 16,
   },
 
-  textStyle: {
-    color: "black",
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 24,
   },
 
+  headerText: {
+    fontSize: 22,
+    fontWeight: "600",
+    color: "#111",
+  },
+
+  headerIcons: {
+    flexDirection: "row",
+    gap: 16,
+  },
+
+  /* ===== CARD ===== */
   card: {
-    width: "90%",
-    paddingVertical: 35,
-    paddingHorizontal: 24,
+    width: "100%",
     backgroundColor: "#1a1a22",
-    justifyContent: "center",
-    borderRadius: 10,
-  },
-
-  title: {
-    color: "#fff",
-    marginBottom: 25,
-    fontSize: 20,
-  },
-
-  subTitle:{
-    color: "#fff",
-    marginBottom: 20,
-  },
-
-  dateTitle: {
-    color: "#fff",
-    marginBottom: 10,
+    padding: 24,
+    borderRadius: 18,
   },
 
   cardHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
   },
 
+  cardTitle: {
+    color: "#9ca3af",
+    fontSize: 14,
+  },
+
+  balance: {
+    color: "#fff",
+    fontSize: 34,
+    fontWeight: "700",
+    marginBottom: 8,
+  },
+
+  date: {
+    color: "#6b7280",
+    fontSize: 12,
+    marginBottom: 24,
+  },
+
+  /* ===== BUTTON ===== */
   button: {
-    width: "100%",
-    backgroundColor: "#fff",
-    paddingVertical: 15,
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff",
+    paddingVertical: 14,
     borderRadius: 30,
+    gap: 8,
   },
 
   buttonText: {
-    color: "black",
+    fontSize: 15,
+    fontWeight: "500",
+    color: "#000",
   },
-})
+
+  services: {
+    marginTop: 30,
+  },
+
+  servicesText: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: "#111",
+  }
+});
