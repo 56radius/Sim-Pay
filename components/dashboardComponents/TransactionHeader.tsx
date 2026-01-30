@@ -3,18 +3,27 @@ import {
     View,
     StyleSheet,
     Pressable,
+    KeyboardAvoidingView,
 }
 from "react-native";
 
 export default function TransactionHeader() {
     return(
-         <View style={styles.transactionHeader}>
-            <Text style={styles.transactionText}> Recent Transactions </Text>
-        
-            <Pressable>
-                <Text style={styles.allTransaction}> View All </Text>
-            </Pressable>
-        </View>
+        <KeyboardAvoidingView>
+            <View style={styles.transactionHeader}>
+                <Text style={styles.transactionText}> Recent Transactions </Text>
+            
+                <Pressable>
+                    <Text style={styles.allTransaction}> View All </Text>
+                </Pressable>
+            </View>
+
+            {/* */}
+            <View>
+
+            </View>
+        </KeyboardAvoidingView>
+
     );
 }
 

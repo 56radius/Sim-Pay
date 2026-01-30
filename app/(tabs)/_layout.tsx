@@ -16,7 +16,7 @@ export default function TabsLayout() {
             />
 
             <Tabs.Screen 
-                name="services" 
+                name="bills" 
                 options={{
                     tabBarIcon: () => <MaterialIcons name="dashboard" size={24} color="black" />
                 }}

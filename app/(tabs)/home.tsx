@@ -11,6 +11,7 @@ import { StatusBar } from "expo-status-bar";
 
 
 //importing components
+import ServicesHeader from "@/components/dashboardComponents/servicesHeader";
 import TransactionHeader from "@/components/dashboardComponents/TransactionHeader";
 
 export default function HomeScreen() {
@@ -66,12 +67,8 @@ export default function HomeScreen() {
 
         </View>
 
-
         {/* Servives */}
-        <View style={styles.services}>
-          <Text style={styles.servicesText}> Services </Text>
-        </View>
-
+        <ServicesHeader />
 
         {/* Offers and Rewards */}
         <View style={styles.services}>

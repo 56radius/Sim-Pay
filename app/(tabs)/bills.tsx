@@ -7,7 +7,7 @@ from "react-native";
 
 import { StatusBar } from "expo-status-bar";
 
-export default function ServiesScreen() {
+export default function BillsScreen() {
   return (
     <>
     <View  style={styles.container}>
