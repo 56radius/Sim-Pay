@@ -1,8 +1,9 @@
 import { Stack, router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
+//import icons
 import { Ionicons } from "@expo/vector-icons";
 
-import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
   return(
@@ -20,7 +21,23 @@ export default function RootLayout() {
           name="airtime"
           options={{
             title: "Airtime",
-            headerLeft: () => (<Ionicons  name="arrow-back" size={24} onPress={() => router.back}/>)
+            headerLeft: () => (<Ionicons  
+                                    name="arrow-back" 
+                                    size={24} 
+                                    onPress={() => router.back() }
+                                />)
+          }}
+        />
+
+        <Stack.Screen 
+          name="data"
+          options={{
+            title: "Get Data",
+            headerLeft: () => (<Ionicons 
+                                    name="arrow-back"
+                                    size={24}
+                                    onPress={() => router.back()}
+                                />)
           }}
         />
 

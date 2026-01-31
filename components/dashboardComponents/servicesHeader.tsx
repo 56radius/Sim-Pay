@@ -26,13 +26,14 @@ export default function ServicesHeader() {
         </Link>
 
     
-
-        <Pressable style={styles.serviceItem}>
-          <View style={styles.iconCard}>
-            <Ionicons name="wifi-outline" size={22} color="#fff" />
-          </View>
-          <Text style={styles.label}>Data</Text>
-        </Pressable>
+        <Link href={"/data"} asChild>
+            <Pressable style={styles.serviceItem}>
+            <View style={styles.iconCard}>
+                <Ionicons name="wifi-outline" size={22} color="#fff" />
+            </View>
+            <Text style={styles.label}>Data</Text>
+            </Pressable>
+        </Link>
 
         <Pressable style={styles.serviceItem}>
           <View style={styles.iconCard}>
