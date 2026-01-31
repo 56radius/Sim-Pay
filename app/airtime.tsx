@@ -16,12 +16,12 @@ export default function AirtimeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#29292e",
+        backgroundColor: "#fff",
         justifyContent: "center",
         alignItems: "center",
     },
 
     airtimeText: {
-        color: "#fff",
+        color: "black",
     },
 })

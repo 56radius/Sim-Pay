@@ -1,18 +1,13 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
-
 //importing components
-import ServicesHeader from "@/components/dashboardComponents/servicesHeader";
-import TransactionHeader from "@/components/dashboardComponents/TransactionHeader";
+import ServicesHeader from "@/components/homeComponents/servicesHeader";
+import OffersHeader from "@/components/homeComponents/offersHeader";
+import TransactionHeader from "@/components/homeComponents/TransactionHeader";
 
 export default function HomeScreen() {
   return (
@@ -20,30 +15,24 @@ export default function HomeScreen() {
       <StatusBar style="dark" />
 
       <View style={styles.container}>
-
         {/* ===== HEADER ===== */}
         <View style={styles.header}>
           <Text style={styles.headerText}>PayFlow</Text>
 
           <View style={styles.headerIcons}>
-            <Ionicons name="shield-checkmark-outline" size={22}color="#111" /> 
-            <Ionicons name="notifications-outline" size={22} color="#111" /> 
+            <Ionicons name="shield-checkmark-outline" size={22} color="#111" />
+            <Ionicons name="notifications-outline" size={22} color="#111" />
           </View>
         </View>
 
         {/* ===== WALLET CARD ===== */}
         <View style={styles.card}>
-
           {/* Card Header */}
           <View style={styles.cardHeader}>
             <Text style={styles.cardTitle}>Wallet Balance</Text>
 
             <Pressable>
-              <Ionicons
-                name="eye-outline"
-                size={20}
-                color="#fff"
-              />
+              <Ionicons name="eye-outline" size={20} color="#fff" />
             </Pressable>
           </View>
 
@@ -51,39 +40,29 @@ export default function HomeScreen() {
           <Text style={styles.balance}>₦2,400.50</Text>
 
           {/* Date */}
-          <Text style={styles.date}>
-            Last updated • 19:25
-          </Text>
+          <Text style={styles.date}>Last updated • 19:25</Text>
 
           {/* Add Money */}
           <Link href="/profile" asChild>
             <Pressable style={styles.button}>
               <AntDesign name="plus-circle" size={24} color="black" />
-              <Text style={styles.buttonText}>
-                Add Money
-              </Text>
+              <Text style={styles.buttonText}>Add Money</Text>
             </Pressable>
           </Link>
-
         </View>
 
         {/* Servives */}
         <ServicesHeader />
 
         {/* Offers and Rewards */}
-        <View style={styles.services}>
-          <Text style={styles.servicesText}> Offers and Rewards </Text>
-        </View>
+        <OffersHeader />
 
         {/* Transaction  */}
         <TransactionHeader />
-        
-
       </View>
     </>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -161,15 +140,4 @@ const styles = StyleSheet.create({
     color: "#000",
   },
 
-  services: {
-    marginTop: 30,
-  },
-
-  servicesText: {
-    fontSize: 20,
-    fontWeight: "600",
-    color: "#111",
-  },
-
-  
 });
