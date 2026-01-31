@@ -1,4 +1,10 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { 
+  Pressable, 
+  StyleSheet, 
+  Text, 
+  View,
+  ScrollView,
+} from "react-native";
 
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
@@ -14,7 +20,7 @@ export default function HomeScreen() {
     <>
       <StatusBar style="dark" />
 
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {/* ===== HEADER ===== */}
         <View style={styles.header}>
           <Text style={styles.headerText}>PayFlow</Text>
@@ -59,7 +65,9 @@ export default function HomeScreen() {
 
         {/* Transaction  */}
         <TransactionHeader />
-      </View>
+
+        {/*.  */}
+      </ScrollView>
     </>
   );
 }
