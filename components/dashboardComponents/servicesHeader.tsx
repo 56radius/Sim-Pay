@@ -1,4 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
+
+import { Link } from "expo-router";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function ServicesHeader() {
@@ -13,12 +16,16 @@ export default function ServicesHeader() {
       {/* Services Row */}
       <View style={styles.servicesRow}>
 
-        <Pressable style={styles.serviceItem}>
-          <View style={styles.iconCard}>
-            <Ionicons name="phone-portrait-outline" size={22} color="#fff" />
-          </View>
-          <Text style={styles.label}>Airtime</Text>
-        </Pressable>
+        <Link href="/airtime" asChild>
+            <Pressable style={styles.serviceItem}>
+                <View style={styles.iconCard}>
+                <Ionicons name="phone-portrait-outline" size={22} color="#fff" />
+                </View>
+                <Text style={styles.label}>Airtime</Text>
+            </Pressable>
+        </Link>
+
+    
 
         <Pressable style={styles.serviceItem}>
           <View style={styles.iconCard}>
