@@ -20,7 +20,7 @@ export default function RootLayout() {
        <Stack.Screen
           name="airtime"
           options={{
-            title: "Airtime",
+            title: "Airtime Bundles",
             headerLeft: () => (<Ionicons  
                                     name="arrow-back" 
                                     size={24} 

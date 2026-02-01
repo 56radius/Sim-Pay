@@ -66,7 +66,7 @@ export default function HomeScreen() {
         {/* Transaction  */}
         <TransactionHeader />
 
-        {/*.  */}
+        {/* Stick to page (quick pay) */}
       </ScrollView>
     </>
   );
